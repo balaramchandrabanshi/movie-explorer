@@ -1,9 +1,10 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div className='text-3xl font-bold underline'>
-      Welcome to Movie Explorer
+    <div className=''>
+      <Navbar />
     </div>
   )
 }
