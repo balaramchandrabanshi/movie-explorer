@@ -1,4 +1,5 @@
 import React from "react";
+import { IoSearch } from "react-icons/io5";
 
 const Hero = () => {
   return (
@@ -12,6 +13,16 @@ const Hero = () => {
           Explore thousands of movies, check ratings, read reviews and find the
           preferred movie for your next night in.
         </p>
+
+        <div className="flex  items-center border-2 border-indigo-600 rounded-lg">
+          <div className="text-2xl px-1.5"><IoSearch /></div>
+          <input
+            className="p-1.5 text-white outline-none"
+            type="text"
+            placeholder="Search for movies..."
+          />
+          <button className="ml-1.5 bg-blue-600 px-2.5 rounded-sm min-h-full hover:bg-blue-800 cursor-pointer transition-color duration-300">Search</button>
+        </div>
       </div>
     </div>
   );
