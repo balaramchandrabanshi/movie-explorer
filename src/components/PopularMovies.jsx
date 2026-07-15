@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
 import { getPopularMovies } from "../services/tmdb.js";
+import { Link } from "react-router-dom";
 
 const PopularMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -8,23 +9,22 @@ const PopularMovies = () => {
 
   useEffect(() => {
     setLoading(true);
-    
+
     getPopularMovies()
       .then((movies) => setMovies(movies))
       .catch((err) => console.log(err))
       .finally(() => {
         setLoading(false);
-      })
-      
+      });
   }, []);
 
   if (loading) {
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <p className="text-2xl font-semibold">Loading...</p>
-    </div>
-  );
-}
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-2xl font-semibold">Loading...</p>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -33,7 +33,9 @@ const PopularMovies = () => {
       </h1>
       <div className="popular-movie-section flex flex-wrap justify-center gap-6 p-6">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie}></MovieCard>
+          <Link key={movie.id} to={`/movie/${movie.id}`} >
+            <MovieCard movie={movie}></MovieCard>
+          </Link>
         ))}
       </div>
     </div>
