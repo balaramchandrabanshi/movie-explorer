@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getMovieDetails } from "../services/tmdb";
 import { FaStar } from "react-icons/fa";
 import { SlCalender } from "react-icons/sl";
+import Loading from "../components/Loading";
 
 const MovieDetails = () => {
   const { id } = useParams();
@@ -21,7 +22,7 @@ const MovieDetails = () => {
   }, [id]);
 
   if (loading) {
-    return <h1>Loading....</h1>;
+    return <Loading />
   }
 
   return (

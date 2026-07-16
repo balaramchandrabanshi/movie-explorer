@@ -5,6 +5,7 @@ import App from './App.jsx'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import Hero from './components/Hero.jsx'
 import MovieDetails from './pages/MovieDetails.jsx'
+import NotFound from './components/NotFound.jsx'
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <h1>Page Not Found</h1>
+    element: <NotFound />
   }
 ])
 

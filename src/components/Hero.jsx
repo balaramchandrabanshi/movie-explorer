@@ -1,5 +1,6 @@
 import React from "react";
 import { IoSearch } from "react-icons/io5";
+import SearchBar from "./SearchBar";
 
 const Hero = () => {
   return (
@@ -23,6 +24,7 @@ const Hero = () => {
           />
           <button className="ml-1.5 bg-blue-600 px-2.5 rounded-sm min-h-full hover:bg-blue-800 cursor-pointer transition-color duration-300">Search</button>
         </div>
+        
       </div>
     </div>
   );
